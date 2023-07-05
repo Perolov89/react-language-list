@@ -1,29 +1,27 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import PersonType from "../types/types";
 import Person from "../app/Person/Person";
+import axios from "axios";
 
 type GalleryProps = {
-    people: PersonType[];
-  }
+  people: PersonType[];
+  handleDelete: (id: string) => void
+};
 
-const Gallery: FC<GalleryProps> = ({ people }) => {
-
-   const handleDelete = () => {
-    
-   }
+const Gallery: FC<GalleryProps> = ({ people, handleDelete }) => {
 
 
-  const names = people.map((p: PersonType) =>
-    <li key={p.id}> 
-    <Person id={p.id} name={p.name} handleDelete={handleDelete} /> 
-    </li>);
+
+  const names = people.map((p: PersonType) => (
+    <li key={p.id}>
+      <Person id={p.id} name={p.name} handleDelete={handleDelete} />
+    </li>
+  ));
 
   return (
     <>
       <article>
-        <ul>
-        {names}
-        </ul>
+        <ul>{names}</ul>
       </article>
     </>
   );

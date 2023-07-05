@@ -21,6 +21,13 @@ function App() {
     getPeople();
   }, []);
 
+  const handleDelete = (id: string) => {
+    setPeople(people.filter((person) => {
+      return person.id !== id;
+    }));
+  };
+
+
     const german = people.filter(p => p.language === 'german')
     const swedish = people.filter(p => p.language === 'swedish')
     const russian = people.filter(p => p.language === 'russian')
@@ -31,11 +38,11 @@ function App() {
       <h1>Who speaks what?</h1>
     <Form />
     <h2>Native German</h2>
-    <Gallery people={german} />
+    <Gallery people={german} handleDelete={handleDelete}/>
     <h2>Native Swedish</h2>
-    <Gallery people={swedish}/>
+    <Gallery people={swedish} handleDelete={handleDelete}/>
     <h2>Native Russian</h2>
-    <Gallery people={russian}/>
+    <Gallery people={russian} handleDelete={handleDelete}/>
     </>
   );
 }

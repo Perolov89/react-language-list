@@ -1,4 +1,5 @@
 import { FC } from "react"
+import axios from "axios";
 type PersonProps = {
     id: string
     name: string
@@ -8,10 +9,13 @@ type PersonProps = {
 
 const Person: FC<PersonProps> = ({ id, name, handleDelete }) => {
 
-    // async axios delete request
+    async function deletePerson(id:string) {
+        axios.delete(`http://localhost:3000/people/${id}`);
+        console.log("post request sent"); // error handling needed
+      }
 
     const onclick = () => {
-        //delete request
+        deletePerson(id);
         handleDelete(id);
     }
 

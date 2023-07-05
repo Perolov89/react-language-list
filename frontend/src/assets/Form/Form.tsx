@@ -25,11 +25,11 @@ const Form = () => {
   async function postPerson() {
     axios.post("http://localhost:3000/people", addPerson);
     console.log("post request sent"); // error handling needed
-  }
+  } // post request sends when person is deleted
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    postPerson();
+    postPerson(); // rerender with statevariable
   };
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
