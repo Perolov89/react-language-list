@@ -1,12 +1,24 @@
+import { FC } from "react"
+type PersonProps = {
+    id: string
+    name: string
+    handleDelete: (id: string) => void
+} 
 
 
+const Person: FC<PersonProps> = ({ id, name, handleDelete }) => {
 
-const Person = () => {
+    // async axios delete request
 
+    const onclick = () => {
+        //delete request
+        handleDelete(id);
+    }
 
     return (
         <>
-        <h4>person component</h4>
+        {name}
+        <button onClick={onclick}>Delete</button>
         </>
     )
 }

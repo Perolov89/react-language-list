@@ -25,15 +25,17 @@ function App() {
     const swedish = people.filter(p => p.language === 'swedish')
     const russian = people.filter(p => p.language === 'russian')
 
-  // filter people and pass down to galleries
 
   return (
     <>
-      <h1>Von Liebenstein</h1>
+      <h1>Who speaks what?</h1>
     <Form />
-    <Gallery props={german} />
-    <Gallery props={swedish}/>
-    <Gallery props={russian}/>
+    <h2>Native German</h2>
+    <Gallery people={german} />
+    <h2>Native Swedish</h2>
+    <Gallery people={swedish}/>
+    <h2>Native Russian</h2>
+    <Gallery people={russian}/>
     </>
   );
 }
