@@ -11,7 +11,7 @@ const Person: FC<PersonProps> = ({ id, name, handleDelete }) => {
 
     async function deletePerson(id:string) {
         axios.delete(`http://localhost:3000/people/${id}`);
-        console.log("post request sent"); // error handling needed
+        console.log("delete request sent"); // error handling needed
       }
 
     const onclick = () => {

@@ -1,10 +1,12 @@
-import { useState, FormEvent,ChangeEvent } from "react";
+import { useState, FormEvent,ChangeEvent, FC } from "react";
 import axios from "axios";
 import Select from "react-select";
 import { v4 as uuidv4 } from 'uuid';
 import PersonType from "../types/types";
 
-
+type FormProps = {
+    handleAddPerson: (addPerson: PersonType) => void
+}
 
 const options = [
     { value: "german", label: "German" },
@@ -12,7 +14,7 @@ const options = [
     { value: "russian", label: "Russian" },
   ];
 
-const Form = () => {
+const Form:FC <FormProps> = ({ handleAddPerson }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [inputName, setInputName] = useState('')
     
@@ -25,11 +27,12 @@ const Form = () => {
   async function postPerson() {
     axios.post("http://localhost:3000/people", addPerson);
     console.log("post request sent"); // error handling needed
-  } // post request sends when person is deleted
+  }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    postPerson(); // rerender with statevariable
+    postPerson();
+    handleAddPerson(addPerson)
   };
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {

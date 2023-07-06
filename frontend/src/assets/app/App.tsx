@@ -27,6 +27,10 @@ function App() {
     }));
   };
 
+  const handleAddPerson = (addPerson: PersonType) => {
+    setPeople([...people, addPerson])
+  }
+
 
     const german = people.filter(p => p.language === 'german')
     const swedish = people.filter(p => p.language === 'swedish')
@@ -36,7 +40,7 @@ function App() {
   return (
     <>
       <h1>Who speaks what?</h1>
-    <Form />
+    <Form handleAddPerson={handleAddPerson}/>
     <h2>Native German</h2>
     <Gallery people={german} handleDelete={handleDelete}/>
     <h2>Native Swedish</h2>

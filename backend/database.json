@@ -1,19 +1,37 @@
 {
   "people": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": "0a14a97a-1674-4e42-b006-c00cb792a93b",
+      "name": "Sophie",
+      "language": "german"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "9000fbee-688e-4c1d-8d3d-b8bfba46545b",
+      "name": "Olle",
+      "language": "russian"
+    },
+    {
+      "id": "6c32da8b-ea11-4e25-ad69-b527fb57ee6e",
+      "name": "Helmut",
+      "language": "german"
+    },
+    {
+      "id": "338cc3a1-520a-44bb-8ca9-cf16d48c65cb",
+      "name": "Vadim",
+      "language": "russian"
+    },
+    {
+      "id": "7a5e6eb9-6a9a-4c46-9a0e-f61b8d829bb9",
+      "name": "Marianne",
+      "language": "swedish"
+    },
+    {
+      "id": "110984cb-154c-4421-8313-6ca3c47c9f12",
+      "name": "Birgitta",
+      "language": "swedish"
+    },
+    {
+      "id": "6zkZuyI"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
