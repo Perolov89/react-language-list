@@ -1,0 +1,55 @@
+* {
+    margin: 0.5rem;
+
+}
+
+html {
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,7,116,1) 11%, rgba(0,212,255,1) 100%);
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 3rem;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+article {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.german {
+    background: linear-gradient(#000 33.333%, #FF0000 33.33% 66.666%, #FFCC00 66.666%);
+}
+
+.german__h2 {
+    color: #ffffff;
+    border: 1px solid white;
+}
+.russian {
+    background: linear-gradient(#ffffff 33.333%, #0000ff 33.33% 66.666%, #ff0000
+    66.666%);
+}
+
+.french {
+    background: linear-gradient(to right, #005cbf 33.33%, #ffffff 33.33%, #ffffff 66.67%, #ef4135 66.67%);
+}

@@ -1,64 +1,85 @@
-import { useState, FormEvent,ChangeEvent, FC } from "react";
+import { useState, FormEvent, ChangeEvent, FC } from "react";
 import axios from "axios";
 import Select from "react-select";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import PersonType from "../types/types";
+import "./Form.css";
 
 type FormProps = {
-    handleAddPerson: (addPerson: PersonType) => void
-}
+  handleAddPerson: (addPerson: PersonType) => void;
+};
 
-const options = [
+const Form: FC<FormProps> = ({ handleAddPerson }) => {
+  const [selectedOption, setSelectedOption] = useState("");
+  const [inputName, setInputName] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const options = [
     { value: "german", label: "German" },
-    { value: "swedish", label: "Swedish" },
+    { value: "french", label: "French" },
     { value: "russian", label: "Russian" },
   ];
 
-const Form:FC <FormProps> = ({ handleAddPerson }) => {
-  const [selectedOption, setSelectedOption] = useState('');
-  const [inputName, setInputName] = useState('')
-    
   const addPerson: PersonType = {
     id: uuidv4(),
     name: inputName,
-    language: selectedOption?.value
+    language: selectedOption?.value,
   };
 
   async function postPerson() {
-    axios.post("http://localhost:3000/people", addPerson);
-    console.log("post request sent"); // error handling needed
+    try {
+      await axios.post("http://localhost:3000/people", addPerson);
+      setErrorMessage("");
+      handleAddPerson(addPerson);
+    } catch (err: any) {
+      setErrorMessage("Something went wrong, please try again");
+      if (err.response) {
+        // The client was given an error response (5xx, 4xx)
+      } else if (err.request) {
+        // The client never received a response, and the request was never left
+        console.log(err.request);
+      } else {
+        console.log("Error", err.message);
+      }
+    }
   }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     postPerson();
-    handleAddPerson(addPerson)
   };
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
-    setInputName(event.target.value)
-  } 
-
+    setInputName(event.target.value);
+  };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="Form__input-label">
           Name:
-          <input type="text" name="name"  onChange={handleNameChange} />
+          <input
+            type="text"
+            name="name"
+            onChange={handleNameChange}
+            className="Form__input"
+          />
         </label>
         <Select
+          className="Form__selectionBar"
           defaultValue={selectedOption}
           onChange={setSelectedOption}
           options={options}
           placeholder="Pick language"
         />
-        <button type="submit">Add person</button>
+        <button type="submit" className="Form__formbutton">
+          Add person
+        </button>
+        <p>{errorMessage}</p>
       </form>
     </>
   );
-}
+};
 
-
-export default Form
+export default Form;

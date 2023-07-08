@@ -1,0 +1,13 @@
+.Person__p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+
+
+.deleteButton {
+    border-radius: 8px;
+    margin-left: auto;
+}
