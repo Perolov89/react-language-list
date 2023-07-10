@@ -8,7 +8,7 @@ import Select from "react-select";
 
 function App() {
   const [people, setPeople] = useState<PersonType[]>([]);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
 
   const options = [
     { value: "all", label: "All" },
@@ -41,32 +41,34 @@ function App() {
   const french = people.filter((p) => p.language === "french");
   const russian = people.filter((p) => p.language === "russian");
 
-  
 
 
   return (
     <>
       <h1>Who speaks what?</h1>
       <Form handleAddPerson={handleAddPerson} />
-      <Select 
-      defaultValue={selectedOption}
-      onChange={setSelectedOption}
-      options={options} 
-      placeHolder="Show languages"
+      <Select
+        defaultValue={selectedOption}
+        onChange={setSelectedOption}
+        options={options}
+        className="showSpeakers"
       />
-      <main>
+      <main> 
+        { ((selectedOption.value === "all") || (selectedOption.value === "german")) &&
         <article className="german">
           <h2 className="german__h2">Native German</h2>
-          <Gallery people={german} handleDelete={handleDelete} />
-        </article>
+            <Gallery people={german} handleDelete={handleDelete}  />
+        </article>}
+        { ((selectedOption.value === "all") || (selectedOption.value === "french")) &&
         <article className="french">
-          <h2>Native French</h2>
-          <Gallery people={french} handleDelete={handleDelete} />
-        </article>
+          <h2>Native French</h2>   
+            <Gallery people={french} handleDelete={handleDelete} /> 
+        </article>}
+        { ((selectedOption.value === "all") || (selectedOption.value === "russian")) &&
         <article className="russian">
           <h2>Native Russian</h2>
-          <Gallery people={russian} handleDelete={handleDelete} />
-        </article>
+            <Gallery people={russian} handleDelete={handleDelete} />
+        </article>}
       </main>
     </>
   );
