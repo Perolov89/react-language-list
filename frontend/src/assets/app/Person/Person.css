@@ -1,13 +1,23 @@
-.Person__p {
+.person__p {
+    background-color: #94ace9;
+    border-radius: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-
+    margin-bottom: 1rem;
+    padding: 0.4rem;
 }
 
 
 
-.deleteButton {
-    border-radius: 8px;
+.delete-button {
+    border-radius: 1rem;
     margin-left: auto;
+    background-color:#4663ac;
+    opacity: 70%;
+    color: white;
+}
+
+.delete-button:hover {
+    opacity: 100%;
 }

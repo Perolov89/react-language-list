@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import PersonType from "../types/types";
 import Person from "../app/Person/Person";
 import "./Gallery.css"
@@ -17,7 +17,7 @@ const Gallery: FC<GalleryProps> = ({ people, handleDelete }) => {
 
   return (
     <>
-      <section >
+      <section className="names">
         <ul>{names}</ul>
       </section>
     </>

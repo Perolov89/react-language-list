@@ -1,57 +1,51 @@
-* {
-    margin: 0.3rem;
-    padding: 0;
+.main {
+    display: grid;
+    grid-template-columns: 1;
+    justify-items: center;
 
-}
-
-html {
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,7,116,1) 11%, rgba(0,212,255,1) 100%);
-}
-
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 3rem;
-}
-
-h2 {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    border-radius: 8px;
-    border: 1px solid black;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-article {
-    display: block;
-    border-radius: 8px;
-    border: 1px solid black;
-    padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 h1 {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background-color: #e1f1fd;
+    text-align: center;
+}
+
+h2 {
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.section-add-person {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #c1d8f0;
+}
+
+.showspeakers_h2 {
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.section-showspeakers {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    background-color: #c1d8f0;;
+}
+
+.language-boxes {
     display: flex;
-    justify-content: center;
+    gap: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #c1d8f0;;
 }
 
-.german {
-    background: linear-gradient(#000 33.333%, #FF0000 33.33% 66.666%, #FFCC00 66.666%);
-}
+article {
 
-.german__h2 {
-    color: #ffffff;
-    border: 1px solid white;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: #e1f1fd;
 }
-.russian {
-    background: linear-gradient(#ffffff 33.333%, #0000ff 33.33% 66.666%, #ff0000
-    66.666%);
-}
-
-.french {
-    background: linear-gradient(to right, #005cbf 33.33%, #ffffff 33.33%, #ffffff 66.67%, #ef4135 66.67%);
-}
-

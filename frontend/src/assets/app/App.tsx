@@ -45,15 +45,21 @@ function App() {
 
   return (
     <>
-      <h1>Who speaks what?</h1>
+    <main className="main">
+    <section className="section-add-person">
+      <h1>Add a native speaker</h1>
       <Form handleAddPerson={handleAddPerson} />
+      </section>
+      <section className="section-showspeakers">
+      <h2 className="showspeakers_h2">Show Speakers</h2>
       <Select
         defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={options}
-        className="showSpeakers"
+        className="showspeakers"
       />
-      <main> 
+      </section>
+      <section className="language-boxes"> 
         { ((selectedOption.value === "all") || (selectedOption.value === "german")) &&
         <article className="german">
           <h2 className="german__h2">Native German</h2>
@@ -69,6 +75,7 @@ function App() {
           <h2>Native Russian</h2>
             <Gallery people={russian} handleDelete={handleDelete} />
         </article>}
+      </section>
       </main>
     </>
   );

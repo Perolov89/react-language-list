@@ -1,6 +1,4 @@
-section {
-    background-color: transparent;
-}
+
 
 ul {
   margin: 0;
@@ -10,5 +8,12 @@ ul {
 }
 
 li {
-    background-color: transparent;
+  border-radius: 1rem;
+  justify-content: space-between;
+  background-color: blue;
+}
+
+.names {
+  font-size: large;
+  color: black;
 }

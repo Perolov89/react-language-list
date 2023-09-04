@@ -40,9 +40,9 @@ const Person: FC<PersonProps> = ({ id, name, handleDelete }) => {
 
   return (
     <>
-    <div className="Person__P">
+    <div className="person__p">
       {name}
-      <button onClick={onclick} className="deleteButton">Delete</button>
+      <button onClick={onclick} className="delete-button">Delete</button>
       <p>{errorMessage}</p>
       </div>
     </>
