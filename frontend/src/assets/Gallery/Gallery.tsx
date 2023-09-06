@@ -1,7 +1,7 @@
 import { FC } from "react";
 import PersonType from "../types/types";
 import Person from "../app/Person/Person";
-import "./Gallery.css"
+import "./Gallery.css";
 
 type GalleryProps = {
   people: PersonType[];

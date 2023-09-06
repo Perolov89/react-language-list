@@ -32,7 +32,8 @@ h2 {
     padding: 1rem;
     border-radius: 1rem;
     margin: 1rem;
-    background-color: #c1d8f0;;
+    background-color: #c1d8f0;
+    color: black;
 }
 
 .language-boxes {
@@ -40,12 +41,10 @@ h2 {
     gap: 3rem;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: #c1d8f0;;
+    background-color: #c1d8f0;
 }
 
 article {
-
     border-radius: 1rem;
     padding: 1rem;
-    background-color: #e1f1fd;
 }

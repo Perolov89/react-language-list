@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import axios from "axios";
-import "./Person.css"
+import "./Person.css";
 type PersonProps = {
   id: string;
   name: string;
@@ -18,7 +18,6 @@ const Person: FC<PersonProps> = ({ id, name, handleDelete }) => {
     } catch (err: unknown) {
       setErrorMessage("Something went wrong, please try again");
       if (axios.isAxiosError(err)) {
-        // Handle Axios error
         if (err.response) {
           // The client was given an error response (5xx, 4xx)
         } else if (err.request) {
@@ -28,7 +27,6 @@ const Person: FC<PersonProps> = ({ id, name, handleDelete }) => {
           console.log("Error", err.message);
         }
       } else {
-        // Handle non-Axios errors
         console.log("Unknown error:", err);
       }
     }
@@ -40,10 +38,12 @@ const Person: FC<PersonProps> = ({ id, name, handleDelete }) => {
 
   return (
     <>
-    <div className="person__p">
-      {name}
-      <button onClick={onclick} className="delete-button">Delete</button>
-      <p>{errorMessage}</p>
+      <div className="person__p">
+        {name}
+        <button onClick={onclick} className="delete-button">
+          Delete
+        </button>
+        <p>{errorMessage}</p>
       </div>
     </>
   );
